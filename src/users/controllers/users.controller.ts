@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
-import { User } from './models/User';
+import { Controller, Get, Header, Response } from '@nestjs/common';
+import { Response as Res } from 'express';
+import { User } from '../models/User';
 
 @Controller('users')
 export class UsersController {
@@ -7,15 +8,15 @@ export class UsersController {
   getAll(): Array<User> {
     return [
       {
-        username: 'user',
+        username: 'user@user.com',
         password: 'password',
       },
       {
-        username: 'admin',
+        username: 'admin@admin.com',
         password: 'password',
       },
       {
-        username: 'timur',
+        username: 'timur@timur.com',
         password: 'password',
       },
     ];
